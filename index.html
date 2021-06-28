@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WaterFall Locator</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+		<link rel="stylesheet" href="style.css">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+        <style type='text/css'>body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
+    </head>
+    <body>
+	<script>
+		falls = [{"name":"Lewis Rd. East Falls","ID":"657","owner":"private","road":"McNeilly Rd.","ranking":"C","city":"Stoney Creek","type":"Cascade","latitude":"43.20112684","longtitude":"-79.66503317"},{"name":"Tiffany Falls","ID":"631","owner":"public","road":"Wilson St. E. \/ Tiffany Falls CA","ranking":"A","city":"Ancaster","type":"Waterfall","latitude":"43.23816424","longtitude":"-79.95811365"},{"name":"Lower Princess Falls","ID":"637","owner":"public","road":"Hwy 403","ranking":"A","city":"Hamilton","type":"Cascade","latitude":"43.24593608","longtitude":"-79.92992126"},{"name":"Upper Sanatorium Falls","ID":"639","owner":"public","road":"Sanatorium Rd. \/ Chedoke Civic Golf Course","ranking":"C","city":"Hamilton","type":"Cascade","latitude":"43.24494626","longtitude":"-79.91470174"},{"name":"Mountview Falls","ID":"641","owner":"public","road":"Scenic Dr. \/ Chedoke Radial Trail Land","ranking":"B","city":"Hamilton","type":"Cascade","latitude":"43.24549626","longtitude":"-79.92144207"},{"name":"Lower Cliffview Falls","ID":"643","owner":"public","road":"Beddoe Dr. \/ Chedoke Civic Golf Course","ranking":"B","city":"Hamilton","type":"Cascade","latitude":"43.24566929","longtitude":"-79.90835759"},{"name":"Cliffview Falls","ID":"645","owner":"public","road":"Beddoe Dr. \/ Chedoke Civic Golf Course \/ Scenic Dr. \/ Cliffview Park","ranking":"A","city":"Hamilton","type":"Cascade","latitude":"43.24425975","longtitude":"-79.90785311"},{"name":"Chedoke Falls","ID":"648","owner":"public","road":"Beddoe Dr. \/ Chedoke Civic Golf Course \/ Scenic Dr","ranking":"A","city":"Hamilton","type":"Waterfall","latitude":"43.24172355","longtitude":"-79.90065606"},{"name":"Buttermilk Falls","ID":"650","owner":"public","road":"Mountain Brow Blvd. \/ Oak-Knoll Park","ranking":"A","city":"Hamilton","type":"Waterfall","latitude":"43.20532028","longtitude":"-79.81957437"},{"name":"Little Davis Falls","ID":"652","owner":"public","road":"Quigley Rd.","ranking":"B","city":"Hamilton","type":"Waterfall","latitude":"43.20674674","longtitude":"-79.78891992"},{"name":"Billy Green Falls","ID":"656","owner":"public","road":"Centennial Pky.","ranking":"B","city":"Stoney Creek","type":"Waterfall","latitude":"43.20722828","longtitude":"-79.76656783"},{"name":"Promontory Falls","ID":"659","owner":"private","road":"Fifty Rd.","ranking":"B","city":"Stoney Creek","type":"Waterfall","latitude":"43.19846368","longtitude":"-79.65216768"},{"name":"Upper Quarry Cascade","ID":"665","owner":"private","road":"Mountain Brow Rd.","ranking":"C","city":"Flamborough","type":"Cascade","latitude":"43.3134191","longtitude":"-79.90643033"},{"name":"Rock Chapel Falls","ID":"671","owner":"public","road":"Rock Chapel Rd.","ranking":"C","city":"Flamborough","type":"Waterfall","latitude":"43.29112026","longtitude":"-79.93659946"},{"name":"East Greensville Falls","ID":"675","owner":"public","road":"Crooks Hollow Rd \/ Crooks Hollow CA","ranking":"C","city":"Flamborough","type":"Cascade","latitude":"43.27943392","longtitude":"-79.9914501"},{"name":"Veevers Falls","ID":"680","owner":"private","road":"Greenhill Ave.","ranking":"C","city":"Hamilton","type":"Cascade","latitude":"43.20819236","longtitude":"-79.78090203"},{"name":"Patterson West Cascade","ID":"682","owner":"public","road":"Patterson Road","ranking":"C","city":"Dundas","type":"Cascade","latitude":"43.29792567","longtitude":"-79.92770312"},{"name":"Auchmar Falls","ID":"684","owner":"public","road":"Beckett Drive","ranking":"C","city":"Hamilton","type":"Waterfall","latitude":"43.24357691","longtitude":"-79.89116304"},{"name":"Beckett Falls","ID":"692","owner":"public","road":"Beckett Drive","ranking":"C","city":"Hamilton","type":"Waterfall","latitude":"43.2448669","longtitude":"-79.88584309"},{"name":"West of Fifty Upper Cascade","ID":"697","owner":"public","road":"Fifty Rd.","ranking":"C","city":"Stoney Creek","type":"Cascade","latitude":"43.19581756","longtitude":"-79.64693365"},{"name":"East of Fifty Falls","ID":"699","owner":"private","road":"Fifty Rd.","ranking":"C","city":"Stoney Creek","type":"Waterfall","latitude":"43.19492372","longtitude":"-79.64141506"},{"name":"Heritage Green Falls","ID":"702","owner":"public","road":"Ackland Street","ranking":"B","city":"Hamilton","type":"Waterfall","latitude":"43.20472388","longtitude":"-79.78751974"},{"name":"Mountain Spring Falls","ID":"706","owner":"public","road":"Ackland Street","ranking":"B","city":"Hamilton","type":"Waterfall","latitude":"43.20451238","longtitude":"-79.78795476"},{"name":"Pritchard Falls","ID":"719","owner":"public","road":"Mountain Brow Blvd. \/ King's Forest Park","ranking":"C","city":"Hamilton","type":"Waterfall","latitude":"43.20110862","longtitude":"-79.81633222"},{"name":"Broman Falls","ID":"721","owner":"public","road":"Bruce Trail Escarpment Rail Trail at Mohawk Sports Park","ranking":"C","city":"Hamilton","type":"Waterfall","latitude":"43.214243","longtitude":"-79.81600432"},{"name":"Lower Punchbowl Falls","ID":"726","owner":"public","road":"Mountain Ave.","ranking":"B","city":"Stoney Creek","type":"Waterfall","latitude":"43.21120564","longtitude":"-79.75716844"},{"name":"Dewitt Falls","ID":"729","owner":"public","road":"Dewitt Rd.","ranking":"C","city":"Stoney Creek","type":"Cascade","latitude":"43.20680717","longtitude":"-79.71843247"},{"name":"Ancaster Heights Falls","ID":"734","owner":"public","road":"Wilson St. E.","ranking":"B","city":"Ancaster","type":"Cascade","latitude":"43.23973798","longtitude":"-79.96284102"},{"name":"Sugar Shack Falls","ID":"743","owner":"public","road":"Rock Chapel Rd. \/ Rock Chapel Sanctuary","ranking":"B","city":"Dundas","type":"Waterfall","latitude":"43.28449266","longtitude":"-79.93754073"},{"name":"Great Falls","ID":"604","owner":"public","road":"Mill St \/ Smokey Hollow Resource Management Area","ranking":"A","city":"Flamborough","type":"Waterfall","latitude":"43.33054059","longtitude":"-79.88723848"},{"name":"Borer's Falls","ID":"609","owner":"public","road":"Rock Chapel Rd. \/ Rock Chapel Sanctuary","ranking":"A","city":"Flamborough","type":"Waterfall","latitude":"43.29381436","longtitude":"-79.93678673"},{"name":"Tew's Falls","ID":"614","owner":"public","road":"Harvest Rd. \/ Spencer Gorge \/ Webster's Falls CA","ranking":"A","city":"Flamborough","type":"Waterfall","latitude":"43.28071262","longtitude":"-79.97826607"},{"name":"Baby Webster's Falls","ID":"617","owner":"public","road":"Fallsview Rd. \/ Spencer Gorge \/ Webster's Falls CA","ranking":"B","city":"Flamborough","type":"Waterfall","latitude":"43.27568445","longtitude":"-79.98189946"},{"name":"Dundas Falls","ID":"619","owner":"private","road":"King St.","ranking":"B","city":"Dundas","type":"Waterfall","latitude":"43.27304004","longtitude":"-79.97215887"},{"name":"Hermitage Cascade","ID":"622","owner":"public","road":"Sulphur Springs Rd. \/ Hermitage ruins","ranking":"B","city":"Ancaster","type":"Cascade","latitude":"43.23636879","longtitude":"-79.99803536"},{"name":"Mill Falls","ID":"624","owner":"private","road":"Old Dundas Rd. \/ Old Mill Rest.","ranking":"B","city":"Ancaster","type":"Waterfall","latitude":"43.23335437","longtitude":"-79.97389756"},{"name":"Canterbury Falls","ID":"626","owner":"public","road":"Old Dundas Rd.","ranking":"B","city":"Ancaster","type":"Cascade","latitude":"43.23698099","longtitude":"-79.98069671"},{"name":"Sherman Falls","ID":"629","owner":"private","road":"Lions Club Rd.","ranking":"A","city":"Ancaster","type":"Waterfall","latitude":"43.23811814","longtitude":"-79.97293085"}]
+	</script>
+
+        <div id="header">
+		<h1><img src="waterfall.jpg" class="logo">WaterFall Locator </h1>
+		</div>
+		<div class="row">
+			<div id='controls' class="col-lg-3 col-md-4 ">
+
+				<div id="topLayer">
+					
+				</div>
+				<div id="lowerLayer">
+					
+				</div>
+				
+			</div>
+				
+<img alt="Toggle panel" id="button_in" src="view.png" style="display: none"  class ="hidden-xs hidden-sm" onclick = "showControls()"/>
+ <img alt="Toggle panel" id="button_out" src="collapse.png" class ="hidden-xs hidden-sm" onclick = "hideControls()" />        
+			<div id='myMap' class="col-lg-12 col-md-12 "></div>
+		</div>
+				<div id="options">
+				<p id="startOption"></p>	
+				</div>
+        <script type='text/javascript'>
+		
+			var map;
+			var latitude ;
+			var longitude;
+			var startLatitude = 43.20112684 ;
+			var startLongitude =-79.66503317;
+			var lat;
+			var lon ;
+			var road;
+			var back;
+			var name ;
+			var opt;
+			
+			function displayControls(){
+				var info = "<div class='home'><h2>Welcome To Falls Locator</h2><p>Locate a WaterFall park near you, Get directon to parks "+
+				"and find closest fall </p><input type=button class= 'btn btn-danger buttons' value='LOCATE FALLS' onclick=loadMap()>"+
+				"<input type = button class= 'btn btn-danger buttons' value='GET DIRECTIONS' onclick= getFalls() >"+
+				"<input type = button class= 'btn btn-danger buttons' value='GET DISTANCE' onclick=getDistance()></div>";
+				document.getElementById('lowerLayer').innerHTML=info;
+				
+			}
+            function getDirection() {
+				map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                    /* No need to set credentials if already passed in URL */
+                    center: new Microsoft.Maps.Location(latitude,longitude),
+                    zoom: 12 });
+                Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
+                    var directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+                    // Set Route Mode to driving
+                    directionsManager.setRequestOptions({ routeMode: Microsoft.Maps.Directions.RouteMode.driving });
+                    var waypoint1 = new Microsoft.Maps.Directions.Waypoint({ address:"My Location", location: new Microsoft.Maps.Location(latitude,longitude) });
+                    var waypoint2 = new Microsoft.Maps.Directions.Waypoint({ address: opt.text , location: new Microsoft.Maps.Location(startLatitude, startLongitude) });
+                    directionsManager.addWaypoint(waypoint1);
+                    directionsManager.addWaypoint(waypoint2);
+                    // Set the element in which the itinerary will be rendered
+                    directionsManager.setRenderOptions({ itineraryContainer: document.getElementById('lowerLayer') });
+                    directionsManager.calculateDirections();
+                });
+				 back= "<section> <input type= button id= 'menu' value= 'Back to Main menu'></section>";
+				document.getElementById('topLayer').innerHTML =back;
+				document.getElementById("menu").addEventListener("click",load);
+
+				}
+				
+			function getLocation() {
+				  if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition, showError);
+				  } else { 
+					x.innerHTML = "Geolocation is not supported by this browser.";
+				  }
+			}
+			function showPosition(position) {
+			   var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(position.coords.latitude,position.coords.longitude), { color: 'red'});
+			   map.entities.push(pin);
+			   var infobox= new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(position.coords.latitude,position.coords.longitude), { visible:
+			   false, autoAlignment: true, title: "My Current Location", description: "Latitude= "+position.coords.latitude+" Longitude= "+position.coords.longitude});
+				infobox.setMap(map);
+				latitude=position.coords.latitude;
+				longitude=position.coords.longitude;
+				                    Microsoft.Maps.Events.addHandler(pin, 'click', function (args) {
+                        infobox.setOptions({
+                            visible: true
+                        });
+                    });
+			}
+				function showError(error) {
+				  switch(error.code) {
+					case error.PERMISSION_DENIED:
+					  x.innerHTML = "User denied the request for Geolocation."
+					  break;
+					case error.POSITION_UNAVAILABLE:
+					  x.innerHTML = "Location information is unavailable."
+					  break;
+					case error.TIMEOUT:
+					  x.innerHTML = "The request to get user location timed out."
+					  break;
+					case error.UNKNOWN_ERROR:
+					  x.innerHTML = "An unknown error occurred."
+					  break;
+				  }
+				}
+            
+			function load(){
+			displayControls();
+			  $("#options").hide();
+			  $("#menu").hide();
+				map = new Microsoft.Maps.Map(document.getElementById("myMap"),{
+				center: new Microsoft.Maps.Location(43.2387, -79.8881),
+				zoom: 12
+				});	
+				getLocation();
+			}
+			function loadMap(){
+				var pushpin =[];
+                for (var i = 0; i < falls.length; i++) {
+					
+						 lat = falls[i].latitude;
+						 lon = falls[i].longtitude;
+						 road = falls[i].road;
+						 name = falls[i].name;
+						 rating = falls[i].ranking;
+				pushpin[i]= new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(lat,lon), null);
+                var infoboxTemplate = '<div id="infoboxText" style="background-color:White; border-style:solid; border-width:medium; border-color:DarkOrange; min-height:100px; width: 240px; "><b id="infoboxTitle" style="position: absolute; top: 10px; left: 10px; width: 220px; ">{title}</b><a id="infoboxDescription" style="position: absolute; top: 30px; left: 10px; width: 220px; ">{description}</a></div>';
+			    var infobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(lat,lon), {maxHeight: 300, maxWidth: 420, visible: false, autoAlignment: true });
+				
+				infobox.setMap(map);
+				var src="<img src="+'images/small_5.png'+" >";
+		 if(rating =="E"){
+		 src ="<img src=" +'images/small_0.png' +" >";
+		 }else if(rating=="D"){
+		 src ="< img src="+'images/small_2.png'+" >";
+		 }else if(rating=="C"){
+		 src ="<img src=" + 'images/small_3.png'+" >";
+		 }else if(rating=="B"){
+		 src ="<img src=" +'images/small_4.png'+" >";
+		 }else if(rating=="A"){
+		 src ="<img src="+'images/small_5.png'+" >";
+		 }
+                    pushpin[i].metadata = {
+                        title: ""+name+".",
+                        description: "ADDRESS: "+falls[i].road + "<br> CITY: " + falls[i].city + "<br> FALL-TYPE: " + falls[i].type + "<br> RANKING: " +src+""
+                              
+						};
+
+					
+                   Microsoft.Maps.Events.addHandler(pushpin[i], 'click', function (args) {
+                        infobox.setOptions({
+                           location: args.target.getLocation(),
+                           title: args.target.metadata.title,
+                           description: args.target.metadata.description,
+                           visible: true
+                       });
+                    });
+										}	map.entities.push(pushpin);
+
+
+			}
+			var sel;
+			function getFalls(){
+				var listStart= "<b>END: </b> <select id='start' name='start' onchange='temp()'>";	
+				for(var i=0; i<falls.length; i++){
+					 name = falls[i].name;
+					listStart +="<option value= "+name+" > "+ name + "</option>";
+				}
+				listStart +="</select>";
+				document.getElementById("startOption").innerHTML=listStart;
+				$("#options").show();
+				
+			}
+			function temp(){
+			sel = document.getElementById('start');
+			opt = sel.options [sel.selectedIndex];			
+			for (var i=0; i<falls.length; i++){
+				if(opt.text == falls[i].name){
+						startLongitude = falls[i].longtitude;
+						startLatitude= falls[i].latitude;
+					}
+				}
+   				getDirection();
+			}
+			
+			function showControls(){
+				$("#controls").show();
+				$("#button_in").hide();
+				$("#button_out").show();
+				
+			}
+			function hideControls(){
+				$("#controls").hide();
+				$("#button_out").hide();
+				$("#button_in").show();
+				
+			}
+			 fallsDistance= [];
+			function insert(name, distance) {
+						fallsDistance.push({
+							name: ""+name+"",
+							distance: ""+distance+""
+						});        
+					}
+			 var distance;
+			 function compare(a,b) {
+				  if (a.distance < b.distance)
+					return -1;
+				  else if (a.distance > b.distance)
+					return 1;
+				  return 0;
+				}
+
+            function getDistance() {
+                 map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
+                Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath', function () {
+				var pushpin;
+                for (var i = 0; i < falls.length; i++) {
+					
+						 lat = falls[i].latitude;
+						 lon = falls[i].longtitude;
+						 road = falls[i].road;
+						 name = falls[i].name;
+				pushpin= new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(lat,lon), null);
+			     var infobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(lat,lon), { visible: false, autoAlignment: true });
+				infobox.setMap(map);
+                    pushpin.metadata = {
+                        title: ""+name+".",
+                        description: lon + ", " + lat + "<br>"         
+						};
+                    Microsoft.Maps.Events.addHandler(pushpin, 'click', function (args) {
+                        infobox.setOptions({
+                            location: args.target.getLocation(),
+                            title: args.target.metadata.title,
+                            description: args.target.metadata.description,
+                            visible: true
+                        });
+                    });
+					
+					distance= Microsoft.Maps.SpatialMath.getDistanceTo(new Microsoft.Maps.Location(latitude,longitude), pushpin.getLocation(), Microsoft.Maps.SpatialMath.DistanceUnits.Miles);
+					insert(falls[i].name, distance)
+				}
+
+				fallsDistance.sort(compare);
+				 back= "<section> <input type= button id= 'menu' value= 'Back to Main menu'></section>";
+                document.getElementById('topLayer').innerHTML =back;
+				document.getElementById("menu").addEventListener("click",load);
+				document.getElementById('lowerLayer').innerHTML="<h2>LIST OF WATERFALL ORDERED BY DISTANCE</h2>";
+				table = "<table class='table table-bordered table table-striped'>";
+				for(var j=0; j < fallsDistance.length; j++){
+					table +='<tr><td> Fall: </td> <td>'+fallsDistance[j].name+ '</td> <td>Distance</td> <td>'+fallsDistance[j].distance+'</td>'
+				}
+				table +="</table>";
+				document.getElementById("lowerLayer").innerHTML += table;
+				});
+				
+            
+            }
+        </script>
+		<script type="text/javascript" src="js/jquery-1.10.0.js"></script>
+			<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=YourAPiKey&callback=load' async defer></script>
+    </body>
+</html>
