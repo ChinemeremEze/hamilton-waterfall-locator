@@ -3,3 +3,4 @@ I made different changes but the three most significant improvments where
 1). Adding a logo to the web application
 2.) Making the information of each pushpin more visible
 3.) The three buttons that where not visible in a mobile device are now visible
+4.) Styled the application to be more user friendly
